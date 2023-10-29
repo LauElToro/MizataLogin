@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Valor Aleatorio</title>
+    <link rel="stylesheet" href="./syles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="ref.html">
+            <div class="Cent">
+                <h1>MIZATA</h1>
+                <img src="./logo--mobile.png" alt="">
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="text" placeholder="Referido" id="referidoInput" value="" readonly>
+                        <i class='bx bx-bitcoin'></i>
+                    </div>
+                    <button type="button" class="btn" onclick="generarValorAleatorio()">Generar</button>
+                </div>
+                <label><input type="checkbox" required>Terminos y privacidad</label>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function generarValorAleatorio() {
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let valorAleatorio = "";
+            for (let i = 0; i < 6; i++) {
+                const indice = Math.floor(Math.random() * caracteres.length);
+                valorAleatorio += caracteres.charAt(indice);
+            }
+            document.getElementById("referidoInput").value = valorAleatorio;
+            document.querySelector(".btn").disabled = true; 
+        }
+    </script>
+</body>
+
+</html>
